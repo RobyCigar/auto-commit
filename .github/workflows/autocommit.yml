@@ -17,12 +17,15 @@ jobs:
         with:
          persist-credentials: false
          fetch-depth: 0
-
+         
       - name: Modify last update
         run: |
           d=`date '+%Y-%m-%dT%H:%M:%SZ'`
           echo $d > LAST_UPDATED
-          
+      
+      - name: work around permission issue
+        run: git config --global --add safe.directory /__w/auto-commit/auto-commit
+        
       - name: Commit changes
         run: |
           git config --local user.email "rabihutomo11@gmail.com"
