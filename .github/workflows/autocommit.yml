@@ -27,6 +27,7 @@ jobs:
       - name: work around permission issue
         run: |
           git config --global --add safe.directory /__w/auto-commit/auto-commit
+          git --version
           
       - name: Commit changes
         run: |
