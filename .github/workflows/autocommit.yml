@@ -25,15 +25,13 @@ jobs:
           echo $d > LAST_UPDATED
       
       - name: work around permission issue
-        # run: git config --global --add safe.directory /__w/github-action-playground/github-action-playground
         run: |
-          apt-get update
-          apt-get install -y git
-          export GIT_CEILING_DIRECTORIES=/__w # don't work
+          git config --global --add safe.directory /__w/auto-commit/auto-commit
+          
       - name: Commit changes
         run: |
-          git config --local user.email "rabihutomo11@gmail.com"
-          git config --local user.name "Robycigar"
+          git config user.email "rabihutomo11@gmail.com"
+          git config user.name "Robycigar"
           git add -A
           
           arr[0]="feat: 😂 auto commit"
