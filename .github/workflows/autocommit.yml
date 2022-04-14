@@ -12,6 +12,7 @@ on:
 jobs:
   auto_commit:
     runs-on: ubuntu-latest
+    container: "ubuntu:devel"
     steps:
       - uses: actions/checkout@v2      
         with:
@@ -24,8 +25,11 @@ jobs:
           echo $d > LAST_UPDATED
       
       - name: work around permission issue
+        # run: git config --global --add safe.directory /__w/github-action-playground/github-action-playground
         run: |
-          git config --global --add safe.directory *
+          apt-get update
+          apt-get install -y git
+          export GIT_CEILING_DIRECTORIES=/__w # don't work
       - name: Commit changes
         run: |
           git config --local user.email "rabihutomo11@gmail.com"
