@@ -25,7 +25,7 @@ jobs:
       
       - name: work around permission issue
         run: |
-          git config --global --add safe.directory /auto-commit
+          git config --global --add safe.directory *
       - name: Commit changes
         run: |
           git config --local user.email "rabihutomo11@gmail.com"
