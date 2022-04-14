@@ -26,9 +26,12 @@ jobs:
       
       - name: work around permission issue
         run: |
+          pwd
+          ls
           apt-get update
           apt-get install -y git
           git --version
+          export GIT_CEILING_DIRECTORIES=/__w
           git config --global --add safe.directory /__w/*
           
       - name: Commit changes
