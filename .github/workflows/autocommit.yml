@@ -30,6 +30,7 @@ jobs:
           apt-get update
           apt-get install -y git
           git --version
+          git status
           git config --global --add safe.directory /__w/auto-commit/auto-commit
           git config --global --add safe.directory /__w/auto-commit
           
@@ -37,8 +38,9 @@ jobs:
         run: |
           pwd
           ls
-          git --config user.email "rabihutomo11@gmail.com"
-          git --config user.name "Robycigar"
+          git status
+          git config --local user.email "rabihutomo11@gmail.com"
+          git config --local user.name "Robycigar"
           git add -A
           
           arr[0]="feat: 😂 auto commit"
