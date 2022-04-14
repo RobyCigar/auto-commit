@@ -24,8 +24,9 @@ jobs:
           echo $d > LAST_UPDATED
       
       - name: work around permission issue
-        run: git config --global --add safe.directory /__w/auto-commit/auto-commit
-        
+        run: |
+          git config --global --add safe.directory /__w/auto-commit/auto-commit
+          git config --global --add safe.directory /__w/RobyCigar/auto-commit
       - name: Commit changes
         run: |
           git config --local user.email "rabihutomo11@gmail.com"
