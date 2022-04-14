@@ -25,9 +25,7 @@ jobs:
       
       - name: work around permission issue
         run: |
-          apt-get update
-          apt-get install -y git
-          export GIT_CEILING_DIRECTORIES=/__w # don't work
+          git config --global --add safe.directory /auto-commit
       - name: Commit changes
         run: |
           git config --local user.email "rabihutomo11@gmail.com"
