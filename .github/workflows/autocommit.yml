@@ -30,7 +30,7 @@ jobs:
           apt-get update
           apt-get install -y git
           git --version
-          git config --global --add safe.directory /__w/auto-commit
+          git config --global --add safe.directory /__w/auto-commit/auto-commit
           
       - name: Commit changes
         run: |
