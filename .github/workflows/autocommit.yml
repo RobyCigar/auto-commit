@@ -1,7 +1,6 @@
 name: Auto commit
 
 on:
-
   push:
     branches:
       - master
@@ -31,8 +30,7 @@ jobs:
           apt-get update
           apt-get install -y git
           git --version
-          export GIT_CEILING_DIRECTORIES=/__w
-          git config --global --add safe.directory /__w/*
+          git config --global --add safe.directory /__w/auto-commit
           
       - name: Commit changes
         run: |
