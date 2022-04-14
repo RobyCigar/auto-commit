@@ -22,13 +22,12 @@ jobs:
           d=`date '+%Y-%m-%dT%H:%M:%SZ'`
           echo $d > LAST_UPDATED
           git status
+          git --version
       
       - name: work around permission issue
         run: |
           pwd
           ls
-          apt-get update
-          apt-get install -y git
           git --version
           git status
           git config --global --add safe.directory /__w/auto-commit/auto-commit
