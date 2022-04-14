@@ -26,6 +26,8 @@ jobs:
       
       - name: work around permission issue
         run: |
+          apt-get update
+          apt-get install -y git
           git --version
           git config --global --add safe.directory /__w/*
           
