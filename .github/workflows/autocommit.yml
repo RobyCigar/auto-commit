@@ -25,7 +25,9 @@ jobs:
       
       - name: work around permission issue
         run: |
-          git config --global --add safe.directory /github/workspace
+          apt-get update
+          apt-get install -y git
+          export GIT_CEILING_DIRECTORIES=/__w # don't work
       - name: Commit changes
         run: |
           git config --local user.email "rabihutomo11@gmail.com"
